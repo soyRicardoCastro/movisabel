@@ -10,11 +10,11 @@ const App = () => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    searchMovies("Batman");
+    searchMovies("Barnie");
   }, []);
 
   const searchMovies = async (title) => {
-    const response = await fetch(`${API_URL}&s=${title}`);
+    const response = await fetch(`http://www.omdbapi.com?apikey=10e94bcd&s=${title}`);
     const data = await response.json();
 
     setMovies(data.Search);
